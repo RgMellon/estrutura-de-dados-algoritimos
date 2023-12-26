@@ -2,7 +2,7 @@ type PrivateItems = {
   [key: string]: number;
 };
 
-class StackUsingObject {
+export class StackUsingObject {
   private count = 0;
   private items: PrivateItems;
 
@@ -67,17 +67,21 @@ class StackUsingObject {
   }
 }
 
-const newStack = new StackUsingObject();
-newStack.push(1);
-newStack.push(22);
-newStack.push(55);
-newStack.push(53);
+// function operations() {
+//   const newStack = new StackUsingObject();
+//   newStack.push(1);
+//   newStack.push(22);
+//   newStack.push(55);
+//   newStack.push(53);
 
-console.log(newStack.getItems());
-console.log("tamanho da pilha", newStack.size());
+//   console.log(newStack.getItems());
+//   console.log("tamanho da pilha", newStack.size());
 
-console.log("item to pop", newStack.pop());
-console.log("items", newStack.getItems());
+//   console.log("item to pop", newStack.pop());
+//   console.log("items", newStack.getItems());
 
-console.log("Espiando o elemento no topo da pilha", newStack.peek());
-console.log("toString", newStack.toString());
+//   console.log("Espiando o elemento no topo da pilha", newStack.peek());
+//   console.log("toString", newStack.toString());
+// }
+
+// operations();
