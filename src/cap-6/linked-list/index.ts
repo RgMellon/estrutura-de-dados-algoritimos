@@ -2,8 +2,8 @@ import { defaultEquals } from "../../utilts/defaultEquals";
 import Node from "../../models/linked-list-model";
 
 export default class LinkedList {
-  private count = 0;
-  private head: null | Node;
+  protected count = 0;
+  protected head: null | Node;
   private equalsFn;
 
   constructor(equalsFn = defaultEquals) {
@@ -98,6 +98,10 @@ export default class LinkedList {
     } else {
       return false;
     }
+  }
+
+  size() {
+    return this.count;
   }
 }
 
