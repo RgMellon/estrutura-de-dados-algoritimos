@@ -1,7 +1,7 @@
 import { defaultToString } from "../utilts/defaultToString";
 import ValuePair from "./ValuePair";
 
-type Table = { [key: string]: ValuePair<string, any> };
+export type Table = { [key: string]: ValuePair<string, any> };
 
 export default class Dictionary {
   private toStrnFn;
