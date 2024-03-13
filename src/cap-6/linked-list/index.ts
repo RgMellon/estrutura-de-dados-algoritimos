@@ -103,6 +103,10 @@ export default class LinkedList {
   size() {
     return this.count;
   }
+
+  gethead() {
+    return this.head;
+  }
 }
 
 const linked = new LinkedList();
