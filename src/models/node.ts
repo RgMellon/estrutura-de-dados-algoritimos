@@ -1,5 +1,5 @@
 export default class Node {
-    private _key: number;
+    private _key: number | null = null;
     private _left: Node | null = null;
     private _right: Node | null = null;
 
@@ -8,7 +8,7 @@ export default class Node {
     }
 
 
-    set key(key: number) {
+    set key(key: number | null) {
         this._key = key
     }
     
@@ -17,7 +17,7 @@ export default class Node {
     }
     
 
-    set left(left: Node) {
+    set left(left: Node | null) {
         this._left = left;
     }
 
@@ -26,7 +26,7 @@ export default class Node {
     }
 
 
-    set right(right: Node) {
+    set right(right: Node | null) {
         this._right = right;
     }
 
