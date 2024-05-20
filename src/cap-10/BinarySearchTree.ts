@@ -3,9 +3,9 @@ import {Compare, defaultCompare, } from '../utilts/defaultCompare'
 import Node from '../models/node'
 
 export default class BinarySearchTree {
-    private root: Node | null;
+    protected root: Node | null;
 
-    constructor(private compareFn = defaultCompare) {
+    constructor(protected compareFn = defaultCompare) {
         this.root = null
     }
 
@@ -17,7 +17,7 @@ export default class BinarySearchTree {
         }
     }
 
-    private insertNode(node: Node, key: number) {
+    protected insertNode(node: Node, key: number) {
         if(this.compareFn(key, node.key) === Compare.LESS_THAN) {
             if(node.left === null) {
                 // Insere no nó a esquerda
@@ -37,7 +37,7 @@ export default class BinarySearchTree {
             
         }
     }
-
+    
     insertTraverseNode(callback: (key: number) => void) {
         this.inOrderTraverseNode(this.root, callback)
     }
