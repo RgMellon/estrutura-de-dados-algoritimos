@@ -80,8 +80,8 @@ class AvlTree extends BinarySearchTree {
         this.root = this.insertNode(this.root, key)!;
     }
 
-    protected insertNode(node: Node | null, key: number): Node | undefined {
-        if(node == null) {
+    protected insertNode(node: Node | null, key: number): Node | null {
+        if(node == null || node == undefined) {
             return new Node(key)
         }
 
@@ -120,9 +120,12 @@ class AvlTree extends BinarySearchTree {
 }
 
 const v = new AvlTree();
+v.insert(15)
 v.insert(8)
-v.insert(7)
-v.insert(4)
+v.insert(9)
+
+
+console.log(JSON.stringify(v, null, 2));
 // v.insert(6)
 // v.insert(5)
 // v.insert(7)

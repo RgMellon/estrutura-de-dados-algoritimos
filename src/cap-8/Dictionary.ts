@@ -21,7 +21,7 @@ export default class Dictionary {
       const tableKey = this.toStrnFn(key);
       this.table[tableKey] = new ValuePair(key, value);
 
-      console.log(`[set] => ${this.table}`);
+      // console.log(`[set] => ${this.table}`);
 
       return true;
     }
@@ -31,7 +31,7 @@ export default class Dictionary {
 
   remove(key: string) {
     if (this.hasKey(key)) {
-      console.log(`[remove] => ${this.table[key]}`);
+      // console.log(`[remove] => ${this.table[key]}`);
       delete this.table[key];
       return true;
     }
@@ -93,7 +93,7 @@ export default class Dictionary {
     const valuePairs = this.keyValues();
 
     let objString = `${valuePairs[0].toString()}`;
-    console.log(`objString => ${objString}`);
+    // console.log(`objString => ${objString}`);
 
     for (let index = 1; index < valuePairs.length; index++) {
       objString = `${objString}, ${valuePairs[index].toString()}`;
@@ -103,15 +103,15 @@ export default class Dictionary {
   }
 }
 
-const dictionary = new Dictionary();
+// const dictionary = new Dictionary();
 
-dictionary.set("Gandalf", "gandalf@mail.com");
-dictionary.set("Minato", "minato@mail.com");
-dictionary.set("Bisso", "bisso@mail.com");
+// dictionary.set("Gandalf", "gandalf@mail.com");
+// dictionary.set("Minato", "minato@mail.com");
+// dictionary.set("Bisso", "bisso@mail.com");
 
-console.log(dictionary.size());
+// // console.log(dictionary.size());
 
-dictionary.forEach((key, value) => {
-  console.log("for each", `key [${key}] => value ${value}`);
-  return true;
-});
+// dictionary.forEach((key, value) => {
+//   console.log("for each", `key [${key}] => value ${value}`);
+//   return true;
+// });

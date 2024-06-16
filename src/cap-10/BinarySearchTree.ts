@@ -181,19 +181,19 @@ export default class BinarySearchTree {
     }
 }
 
-const callback = (value: number) => {console.log(value)}
-const u = new BinarySearchTree()
-u.insert(11)
-u.insert(8)
-u.insert(14)
-u.insert(5)
-u.insert(9)
+// const callback = (value: number) => {console.log(value)}
+// const u = new BinarySearchTree()
+// u.insert(11)
+// u.insert(8)
+// u.insert(14)
+// u.insert(5)
+// u.insert(9)
 
-u.remove(5)
+// u.remove(5)
 
 
 
-u.insertTraverseNode(callback)
+// u.insertTraverseNode(callback)
 
 // console.log(u.max())
 // console.log(u.min())

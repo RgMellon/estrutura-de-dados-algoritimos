@@ -1,5 +1,5 @@
 type PrivateItems = {
-  [key: string]: number;
+  [key: string]: any;
 };
 
 export class StackUsingObject {
@@ -10,7 +10,7 @@ export class StackUsingObject {
     this.items = {};
   }
 
-  push(element: number) {
+  push(element: any) {
     this.items[this.count] = element;
     this.count++;
   }
