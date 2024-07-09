@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Visualization</title>
+    <style>
+        /* 2. Estilos CSS */
+        .node {
+            fill: #4CAF50;
+            stroke: #000;
+            stroke-width: 1.5px;
+        }
+
+        .edge {
+            stroke: #999;
+            stroke-width: 1.5px;
+        }
+
+        .label {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            fill: #000;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1. Estrutura HTML -->
+    <svg id="graph" width="600" height="400"></svg>
+
+    <script>
+        // 3. JavaScript para desenhar o grafo
+        const graph = [
+            [0, 2, 4, 0, 0, 0],
+            [0, 0, 2, 4, 2, 0],
+            [0, 0, 0, 0, 3, 0],
+            [0, 0, 0, 0, 0, 2],
+            [0, 0, 0, 3, 0, 2],
+            [0, 0, 0, 0, 0, 0]
+        ];
+
+        const nodes = ['A', 'B', 'C', 'D', 'E', 'F'];
+        const svg = document.getElementById('graph');
+        const nodeRadius = 20;
+        const positions = [
+            {x: 50, y: 50},
+            {x: 150, y: 50},
+            {x: 250, y: 50},
+            {x: 150, y: 150},
+            {x: 250, y: 150},
+            {x: 350, y: 150}
+        ];
+
+        // Desenha as arestas
+        for (let u = 0; u < graph.length; u++) {
+            for (let v = 0; v < graph[u].length; v++) {
+                if (graph[u][v] !== 0) {
+                    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                    line.setAttribute('x1', positions[u].x);
+                    line.setAttribute('y1', positions[u].y);
+                    line.setAttribute('x2', positions[v].x);
+                    line.setAttribute('y2', positions[v].y);
+                    line.classList.add('edge');
+                    svg.appendChild(line);
+                }
+            }
+        }
+
+        // Desenha os vértices
+        for (let i = 0; i < nodes.length; i++) {
+            const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            circle.setAttribute('cx', positions[i].x);
+            circle.setAttribute('cy', positions[i].y);
+            circle.setAttribute('r', nodeRadius);
+            circle.classList.add('node');
+            svg.appendChild(circle);
+
+            const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            text.setAttribute('x', positions[i].x);
+            text.setAttribute('y', positions[i].y);
+            text.setAttribute('dy', '.35em');
+            text.setAttribute('text-anchor', 'middle');
+            text.classList.add('label');
+            text.textContent = `${nodes[i]} - ${i}`;
+            svg.appendChild(text);
+        }
+    </script>
+</body>
+</html>
