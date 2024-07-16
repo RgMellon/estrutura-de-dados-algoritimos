@@ -40,10 +40,22 @@ export class MinHeap {
     siftUp(index: number ) {
         let parent = this.getParent(index)
         
-        while(index > 0 && this.compareFn(this.heap[parent!], this.heap[index] > Compare.BIGGER_THAN)) {
+        while(index > 0 && this.compareFn(this.heap[parent!], this.heap[index]) > Compare.BIGGER_THAN) {
             swap(this.heap, parent, index);
-            index = parent!;
+            index = parent!; //o index vai ser a posicao do parent;
             parent = this.getParent(index);
         }
+    }
+
+    size() {
+        return this.heap.length;
+    }
+
+    isEmpty() {
+        return this.size() === 0;
+    }
+
+    findMinimum() {
+        return this.isEmpty() ? undefined : this.heap[0]
     }
 }
